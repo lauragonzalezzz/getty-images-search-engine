@@ -9,7 +9,7 @@ searchBtn.addEventListener('click', function(event){
   var imagesRequest = new XMLHttpRequest();
   imagesRequest.addEventListener('load', getResults);
   imagesRequest.open('GET', "https://api.gettyimages.com/v3/search/images?phrase=" + searchInput);
-  imagesRequest.setRequestHeader('Api-Key', 'uxbmd9yj85eks5wfjmqn3rev');
+  imagesRequest.setRequestHeader('Api-Key', '');
   imagesRequest.send();
 });
 
