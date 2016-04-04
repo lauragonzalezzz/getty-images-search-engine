@@ -3,3 +3,35 @@ $light : honeydew;
 body{
   background-color: $light;
 }
+
+#container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  border: 1px solid red;
+
+  .card{
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 1 40%;
+
+    .title{
+      flex: 1 1 100%;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .image{
+      flex: 1 1 100%;
+      padding: 10px;
+    }
+
+    .caption{
+      flex: 1 1 100%;
+      text-align: center;
+    }
+
+  }
+}

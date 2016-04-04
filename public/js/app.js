@@ -23,6 +23,7 @@ function getResults(){
   var allTheResults = JSON.parse(this.responseText);
   console.log('allTheResults',allTheResults);
 
+// Makes Cards with Title, Image, and Caption
   for (var i = 0; i < allTheResults.images.length; i++){
     var card = document.createElement('div');
     card.className = "card";
@@ -35,15 +36,15 @@ function getResults(){
 
     var image = document.createElement('img');
     image.src = allTheResults.images[i].display_sizes[0].uri;
+    image.style.height = (allTheResults.images[i].max_dimensions.height /10) + "px";
     image.className = "image";
     card.appendChild(image);
 
     var caption = document.createElement('div')
     caption.innerHTML = allTheResults.images[i].caption;
     caption.className = "caption";
+    card.appendChild(caption);
 
   };
 
 };
-
-//picture: container.innerHTML = allTheResults.images[0].display_sizes[0].uri;

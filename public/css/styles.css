@@ -1,2 +1,24 @@
 body {
   background-color: honeydew; }
+
+#container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  border: 1px solid red; }
+  #container .card {
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 1 40%; }
+    #container .card .title {
+      flex: 1 1 100%;
+      font-size: 30px;
+      text-align: center; }
+    #container .card .image {
+      flex: 1 1 100%;
+      padding: 10px; }
+    #container .card .caption {
+      flex: 1 1 100%;
+      text-align: center; }
