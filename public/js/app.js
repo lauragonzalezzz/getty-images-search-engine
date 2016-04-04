@@ -22,9 +22,25 @@ function getResults(){
 
   var allTheResults = JSON.parse(this.responseText);
   console.log('allTheResults',allTheResults);
-  container.innerHTML = allTheResults.images[0].display_sizes[0].uri;
 
   for (var i = 0; i < allTheResults.images.length; i++){
+    var card = document.createElement('div');
+    card.className = "card";
+    container.appendChild(card);
+
+    var title = document.createElement('div');
+    title.innerHTML = allTheResults.images[i].title;
+    title.className = "title";
+    card.appendChild(title);
+
+    var image = document.createElement('img');
+    image.src = allTheResults.images[i].display_sizes[0].uri;
+    image.className = "image";
+    card.appendChild(image);
+
+    var caption = document.createElement('div')
+    caption.innerHTML = allTheResults.images[i].caption;
+    caption.className = "caption";
 
   };
 
