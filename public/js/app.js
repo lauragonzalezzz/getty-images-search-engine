@@ -9,21 +9,25 @@ searchBtn.addEventListener('click', function(event){
   var imagesRequest = new XMLHttpRequest();
   imagesRequest.addEventListener('load', getResults);
   imagesRequest.open('GET', "https://api.gettyimages.com/v3/search/images?phrase=" + searchInput);
-  imagesRequest.setRequestHeader('Api-Key', '');
+  imagesRequest.setRequestHeader('Api-Key', API_KEY);
   imagesRequest.send();
 });
 
-var displayDiv = document.getElementById('displayDiv');
+var container = document.getElementById('container');
 
 function getResults(){
 // Clear User Input
-  userInput = '';
+  searchInput.value = '';
 
 
   var allTheResults = JSON.parse(this.responseText);
+  console.log('allTheResults',allTheResults);
+  container.innerHTML = allTheResults.images[0].display_sizes[0].uri;
 
+  for (var i = 0; i < allTheResults.images.length; i++){
 
+  };
 
 };
 
-//picture: displayDiv.innerHTML = allTheResults.images[0].display_sizes[0].uri;
+//picture: container.innerHTML = allTheResults.images[0].display_sizes[0].uri;
