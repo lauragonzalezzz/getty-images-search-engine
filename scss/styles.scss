@@ -1,26 +1,56 @@
+// VARIABLES
+
 $light : honeydew;
+$cardBackground : lavender;
+
 
 body{
-  background-color: $light;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+header{
+  margin: 20px;
+  text-align: center;
+  background-color: $cardBackground;
+  padding: 25px;
+
+  input{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+  }
+
+  button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+  }
 }
 
 #container{
+  width: 85%;
+  margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: flex-start;
-  border: 1px solid red;
+  background-color: white;
 
   .card{
-    border: 1px solid blue;
+    border: 1px solid darken($cardBackground, 10%);
+    border-radius: 5px;
+    background-color: lighten($cardBackground, 2%);
     display: flex;
     flex-flow: row wrap;
     flex: 0 1 40%;
+    margin: 40px;
+    padding: 10px;
 
     .title{
       flex: 1 1 100%;
       font-size: 30px;
       text-align: center;
+      font-weight: bold;
+      color: darken($cardBackground, 30%);
     }
 
     .image{
@@ -31,6 +61,7 @@ body{
     .caption{
       flex: 1 1 100%;
       text-align: center;
+      color: darken($cardBackground, 30%);
     }
 
   }

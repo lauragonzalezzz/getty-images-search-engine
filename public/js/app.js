@@ -6,6 +6,10 @@ searchBtn.addEventListener('click', function(event){
   var searchTitle = document.getElementById('searchTitle');
   searchTitle.innerHTML = searchInput;
 
+  if (searchInput.search(" ") !== -1){
+    searchInput = searchInput.replace(/\s/g, '');
+  }
+
   var imagesRequest = new XMLHttpRequest();
   imagesRequest.addEventListener('load', getResults);
   imagesRequest.open('GET', "https://api.gettyimages.com/v3/search/images?phrase=" + searchInput);
@@ -16,12 +20,14 @@ searchBtn.addEventListener('click', function(event){
 var container = document.getElementById('container');
 
 function getResults(){
-// Clear User Input
-  searchInput.value = '';
 
+// Empty Current Container
+  container.innerHTML = '';
+
+// Clear User Input
+  searchInput = '';
 
   var allTheResults = JSON.parse(this.responseText);
-  console.log('allTheResults',allTheResults);
 
 // Makes Cards with Title, Image, and Caption
   for (var i = 0; i < allTheResults.images.length; i++){

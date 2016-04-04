@@ -1,24 +1,46 @@
 body {
-  background-color: honeydew; }
+  background-color: white;
+  font-family: 'Raleway', sans-serif; }
+
+header {
+  margin: 20px;
+  text-align: center;
+  background-color: lavender;
+  padding: 25px; }
+  header input {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px; }
+  header button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px; }
 
 #container {
+  width: 85%;
+  margin: 0 auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: flex-start;
-  border: 1px solid red; }
+  background-color: white; }
   #container .card {
-    border: 1px solid blue;
+    border: 1px solid #bcbcf2;
+    border-radius: 5px;
+    background-color: #efeffc;
     display: flex;
     flex-flow: row wrap;
-    flex: 0 1 40%; }
+    flex: 0 1 40%;
+    margin: 40px;
+    padding: 10px; }
     #container .card .title {
       flex: 1 1 100%;
       font-size: 30px;
-      text-align: center; }
+      text-align: center;
+      font-weight: bold;
+      color: #6767e1; }
     #container .card .image {
       flex: 1 1 100%;
       padding: 10px; }
     #container .card .caption {
       flex: 1 1 100%;
-      text-align: center; }
+      text-align: center;
+      color: #6767e1; }
