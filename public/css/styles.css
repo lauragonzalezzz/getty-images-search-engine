@@ -13,6 +13,10 @@ header {
   header button {
     font-family: 'Raleway', sans-serif;
     font-size: 20px; }
+  header #savedSearches {
+    padding-top: 20px;
+    font-weight: bold;
+    word-spacing: 5px; }
 
 #container {
   width: 85%;
