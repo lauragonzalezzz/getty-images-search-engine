@@ -1,6 +1,9 @@
+var searchesArr = [];
+
 var searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', function(event){
   event.preventDefault();
+
 
   var searchInput = document.getElementById('searchInput').value;
   var searchTitle = document.getElementById('searchTitle');
@@ -10,11 +13,20 @@ searchBtn.addEventListener('click', function(event){
     searchInput = searchInput.replace(/\s/g, '');
   }
 
+
+  var savedSearches = document.getElementById('savedSearches');
+  savedSearches.innerHTML = "History: " + searchesArr.join(' ');
+
   var imagesRequest = new XMLHttpRequest();
   imagesRequest.addEventListener('load', getResults);
   imagesRequest.open('GET', "https://api.gettyimages.com/v3/search/images?phrase=" + searchInput);
   imagesRequest.setRequestHeader('Api-Key', API_KEY);
   imagesRequest.send();
+
+
+  searchesArr.push(searchInput);
+  console.log('searchesArr',searchesArr);
+
 });
 
 var container = document.getElementById('container');
@@ -25,7 +37,7 @@ function getResults(){
   container.innerHTML = '';
 
 // Clear User Input
-  searchInput = '';
+  searchInput.value = '';
 
   var allTheResults = JSON.parse(this.responseText);
 
@@ -54,3 +66,6 @@ function getResults(){
   };
 
 };
+
+
+// Save searches
